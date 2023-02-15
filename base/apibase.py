@@ -2,6 +2,8 @@ import pytest
 import requests
 
 DOMAIN = 'https://stage-v10.api.autodoc.pro'
+LOGIN_CRED = 'test_customer3@autodoc.pro'
+PASSWORD_CRED = '12345678'
 class Apibase():
 
 
@@ -12,3 +14,9 @@ class Apibase():
             'login': '/api/auth/login'
         }
         return DOMAIN + routeAuth[route_name]
+
+    def get_login_credentials(self) -> str:
+        return "".join(LOGIN_CRED)
+
+    def get_password_credentials(self) -> str:
+        return "".join(PASSWORD_CRED)
