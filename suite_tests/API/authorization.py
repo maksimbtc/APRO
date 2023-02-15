@@ -12,8 +12,7 @@ class authorization(unittest.TestCase):
                    }
         body = {"login": Apibase.get_login_credentials(self), "password": Apibase.get_password_credentials(self)}
         response = requests.post(Apibase.get_route_auth('login'), headers=Headers, json=body)
-        print(response.text)
-        assert response.status_code == 200
+        assert response.status_code == 200, 'User is authorized'
 
 
 if __name__ == '__main__':
