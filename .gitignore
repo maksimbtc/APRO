@@ -130,3 +130,7 @@ dmypy.json
 
 # PyCharm settings
 .idea/
+.idea/AutodocPRO.iml
+
+# Bite files
+.pyc

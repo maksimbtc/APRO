@@ -1,6 +1,5 @@
 import pytest
-from pom.login_pom import Login_POM
-
+from suite_tests.pom.login_pom import Login_POM
 
 @pytest.mark.usefixtures('setup')
 class TestLogInForm:
