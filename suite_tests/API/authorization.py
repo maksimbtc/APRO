@@ -10,7 +10,7 @@ class authorization(unittest.TestCase):
                    "Content-Type": "application/json",
                    "X-CSRF-TOKEN": None
                    }
-        body = {"login": "test_customer3@autodoc.pro", "password": "12345678"}
+        body = {"login": Apibase.get_login_credentials(self), "password": Apibase.get_password_credentials(self)}
         response = requests.post(Apibase.get_route_auth('login'), headers=Headers, json=body)
         print(response.text)
         assert response.status_code == 200
