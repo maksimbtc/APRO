@@ -13,6 +13,5 @@ class Login_POM(SeleniumBase):
         title_cookie_text = self.is_visible('css', self.__coolie_modal_text, 'Text cookie visibility').text
         return "".join(title_cookie_text)
 
-    def test(self):
-        pass
+
 
