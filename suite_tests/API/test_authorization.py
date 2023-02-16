@@ -1,10 +1,12 @@
 import requests
 import unittest
+import pytest
 
 from base.apibase import Apibase
 
 
 class authorization(unittest.TestCase):
+    @pytest.mark.authorization_api
     def test_authorization(self):
         Headers = {"accept": "application/json",
                    "X-COUNTRY-CODE": "FR",
