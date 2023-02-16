@@ -18,12 +18,12 @@ def get_webdriver(get_chrome_options):
     return driver
 
 
-@pytest.fixture(scope='function') # scope='function' run before each test. session - scope for all session of browser (after all tests)
+@pytest.fixture(scope='function')  # scope='function' run before each test. session - scope for all session of browser (after all tests)
 def setup(request, get_webdriver):
     driver = get_webdriver
     url = 'https://test.autodoc.pro/en/signin'
     if request.cls is not None:
         request.cls.driver = driver
-    driver.get(url) # run is from class or no
+    driver.get(url)  # run is from class or no
     yield driver
     driver.quit()

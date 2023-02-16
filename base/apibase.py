@@ -1,16 +1,16 @@
-import pytest
 import requests
 
 DOMAIN = 'https://stage-v10.api.autodoc.pro'
 LOGIN_CRED = 'test_customer3@autodoc.pro'
 PASSWORD_CRED = '12345678'
-class Apibase():
 
+
+class Apibase():
 
     def get_route_auth(get_route: str) -> dict:
         route_name = get_route.lower()
         routeAuth = {
-            #POST
+            # POST
             'forgot-password': '/api/auth/forgot-password',
             'login': '/api/auth/login'
         }
@@ -19,8 +19,11 @@ class Apibase():
     def get_route_personal_manager(get_route: str) -> dict:
         route_name = get_route.lower()
         routePM = {
-            #GET
-            'get_personal_manager': '/api/profile/personal-manager'
+            # GET
+            'get_personal_manager': '/api/profile/personal-manager',
+
+            # POST
+            'set_personal_manager_rating': '/api/profile/personal-manager/rating'
         }
         return DOMAIN + routePM[route_name]
 
