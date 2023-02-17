@@ -11,6 +11,7 @@ class Header:
         else:
             self.headers = {
                 "accept": "application/json",
+                "Authorization": token,
                 "X-COUNTRY-CODE": "FR",
                 "Content-Type": "application/json",
                 "X-CSRF-TOKEN": None
