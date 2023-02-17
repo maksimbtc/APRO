@@ -1,5 +1,7 @@
 import requests
 
+from suite_tests.API.config.header import Header
+
 DOMAIN = 'https://stage-v10.api.autodoc.pro'
 LOGIN_CRED = 'test_customer3@autodoc.pro'
 PASSWORD_CRED = '12345678'
@@ -36,12 +38,16 @@ def get_password_credentials() -> str:
 
 
 def get_user_token() -> str:
-    Headers = {"accept": "application/json",
-               "X-COUNTRY-CODE": "FR",
-               "Content-Type": "application/json",
-               "X-CSRF-TOKEN": None
-               }
+    headers = Header()
+
     body = {'login': LOGIN_CRED, 'password': PASSWORD_CRED}
-    response = requests.post(get_route_auth('login'), headers=Headers, json=body)
+
+    response = requests.post(
+        get_route_auth('login'),
+        headers=headers.get_header(),
+        json=body
+    )
+
     token = response.json()["data"]["token"]
+
     return 'Bearer ' + token

@@ -1,21 +1,17 @@
+BASE_HEADER = {
+    "accept": "application/json",
+    "X-COUNTRY-CODE": "FR",
+    "Content-Type": "application/json",
+    "X-CSRF-TOKEN": None
+}
+
+
 class Header:
 
     def __init__(self, token=None):
-        if token is None:
-            self.headers = {
-                "accept": "application/json",
-                "X-COUNTRY-CODE": "FR",
-                "Content-Type": "application/json",
-                "X-CSRF-TOKEN": None
-            }
-        else:
-            self.headers = {
-                "accept": "application/json",
-                "Authorization": token,
-                "X-COUNTRY-CODE": "FR",
-                "Content-Type": "application/json",
-                "X-CSRF-TOKEN": None
-            }
+        self.headers = BASE_HEADER
+        if token is not None:
+            self.headers["Authorization"] = token
 
     def get_header(self):
         return self.headers
