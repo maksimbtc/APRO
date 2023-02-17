@@ -1,33 +1,31 @@
-import requests
-import unittest
 import pytest
-from base.apibase import Apibase
+
+from base.apibase import *
+from suite_tests.API.config.header import Header
 
 
-class PersonalManager(unittest.TestCase):
+@pytest.mark.personal_manager_api
+def test_get_personal_manager():
+    headers = Header(get_user_token())
 
-    @pytest.mark.personal_manager_api
-    def test_get_personal_manager(self):
-        Headers = {"accept": "application/json",
-                   "Authorization": Apibase.get_user_token(self),
-                   "Content-Type": "application/json",
-                   "X-CSRF-TOKEN": None
-                   }
-        response = requests.get(Apibase.get_route_personal_manager('get_personal_manager'), headers=Headers)
-        assert response.status_code == 200, 'User has personal manager'
+    response = requests.get(
+        get_route_personal_manager('get_personal_manager'),
+        headers=headers.get_header()
+    )
 
-    @pytest.mark.personal_manager_api
-    def test_set_personal_manager_rating_without_pm(self):
-        Headers = {"accept": None,
-                   "Authorization": Apibase.get_user_token(self),
-                   "Content-Type": "application/json",
-                   "X-CSRF-TOKEN": None
-                   }
-        body = {"rating": 1, "comment": "Some comment"}
-        response = requests.post(Apibase.get_route_personal_manager('set_personal_manager_rating'), headers=Headers,
-                                 json=body)
-        assert response.status_code == 422, 'User has personal manager'
+    assert response.status_code == 200, 'User has personal manager'
 
 
-if __name__ == '__main__':
-    unittest.main()
+@pytest.mark.personal_manager_api
+def test_set_personal_manager_rating_without_pm():
+    headers = Header(get_user_token())
+
+    body = {"rating": 1, "comment": "Some comment"}
+
+    response = requests.post(
+        get_route_personal_manager('set_personal_manager_rating'),
+        headers=headers.get_header(),
+        json=body
+    )
+
+    assert response.status_code == 422, 'User has personal manager'
