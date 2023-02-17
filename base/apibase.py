@@ -5,6 +5,9 @@ from suite_tests.API.config.header import Header
 DOMAIN = 'https://stage-v10.api.autodoc.pro'
 LOGIN_CRED = 'test_customer3@autodoc.pro'
 PASSWORD_CRED = '12345678'
+NAME_SEPA = 'BANQUE POPULAIRE RIVERS DE PARIS'
+IBAN_SEPA = 'FR7610207000021111111111180'
+BIC_SEPA = 'CCBPFRPPMTG'
 
 
 def get_route_auth(route: str) -> str:
@@ -25,6 +28,14 @@ def get_route_personal_manager(route: str) -> str:
 
         # POST
         'set_personal_manager_rating': '/api/profile/personal-manager/rating'
+    }
+    return DOMAIN + routePM[route_name]
+
+def get_route_settings(route: str) -> str:
+    route_name = route.lower()
+    routePM = {
+        # PUT
+        'put_bank_detail': '/api/settings/bank-detail'
     }
     return DOMAIN + routePM[route_name]
 
