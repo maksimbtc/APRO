@@ -6,7 +6,7 @@ from selenium.webdriver.chrome.options import Options as chrome_options
 @pytest.fixture
 def get_chrome_options():
     options = chrome_options()
-    options.add_argument('chrome')  # use headless if you don't need a browser UI
+    options.add_argument('headless')  # use headless if you don't need a browser UI
     options.add_argument('--start-maximized')
     return options
 

@@ -17,4 +17,4 @@ def test_authorization():
         headers=headers.get_header(),
         json=body)
 
-    assert response.status_code == 200, 'User is authorized'
+    assert response.status_code == 200, 'User is NOT authorized'
