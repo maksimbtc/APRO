@@ -63,7 +63,6 @@ def test_delete_bank_detail():
 
 @pytest.mark.Settings
 @pytest.mark.API
-@pytest.mark.fixpath
 # can not run via pytest
 def test_get_company_name():
     response = requests.get(
@@ -73,16 +72,12 @@ def test_get_company_name():
 
     company_path = os.path.join('suite_tests', 'API', 'config', 'resources', 'company.json')
 
-    try:
-        with open(company_path) as f:
-            expJson = json.load(f)
+    with open(company_path) as f:
+        expJson = json.load(f)
 
-            expResult = expJson["data"]["company"]["companyName"]
-            actResult = response.json()["data"]["company"]["companyName"]
-    except FileNotFoundError:
-        print("file path issue")
-    finally:
-        f.close()
+        expResult = expJson["data"]["company"]["companyName"]
+        actResult = response.json()["data"]["company"]["companyName"]
+
 
     assert response.status_code == 200, 'Bank details service is not available'
     assert expResult == actResult, 'Incorrect company name info'
