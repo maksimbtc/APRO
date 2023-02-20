@@ -1,6 +1,7 @@
 import pytest
 import json
 from base.apibase import *
+import os
 
 headers = Header(get_user_token())
 
@@ -69,11 +70,18 @@ def test_get_company_name():
         headers=headers.get_header()
     )
 
-    with open('config/resources/company.json') as f:
-        expJson = json.load(f)
+    company_path = os.path.join('./', 'suite_tests', 'API', 'config', 'resources', 'company.json')
 
-        expResult = expJson["data"]["company"]["companyName"]
-        actResult = response.json()["data"]["company"]["companyName"]
+    try:
+        with open(company_path) as f:
+            expJson = json.load(f)
+
+            expResult = expJson["data"]["company"]["companyName"]
+            actResult = response.json()["data"]["company"]["companyName"]
+    except FileNotFoundError:
+        print("file path issue")
+    finally:
+        f.close()
 
     assert response.status_code == 200, 'Bank details service is not available'
     assert expResult == actResult, 'Incorrect company name info'
