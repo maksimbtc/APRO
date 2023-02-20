@@ -18,3 +18,8 @@ def test_update_bank_detail():
     )
 
     assert response.status_code == 200, 'Bank detail settings was not updated'
+
+    def test_get_bank_detail():
+        test_update_bank_detail()
+
+
