@@ -63,6 +63,7 @@ def test_delete_bank_detail():
 
 @pytest.mark.Settings
 @pytest.mark.API
+@pytest.mark.fixpath
 # can not run via pytest
 def test_get_company_name():
     response = requests.get(
@@ -70,7 +71,7 @@ def test_get_company_name():
         headers=headers.get_header()
     )
 
-    company_path = os.path.join('./', 'suite_tests', 'API', 'config', 'resources', 'company.json')
+    company_path = os.path.join('suite_tests', 'API', 'config', 'resources', 'company.json')
 
     try:
         with open(company_path) as f:
