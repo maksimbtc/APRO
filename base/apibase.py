@@ -1,7 +1,7 @@
 import requests
 
 from suite_tests.API.config.header import Header
-from suite_tests.API.config.statis_info import *
+from suite_tests.API.config.static_info import *
 
 
 def get_route_auth(route: str) -> str:
@@ -29,8 +29,15 @@ def get_route_personal_manager(route: str) -> str:
 def get_route_settings(route: str) -> str:
     route_name = route.lower()
     routePM = {
+        # GET
+        'get_bank_detail': '/api/settings/bank-detail',
+        'get_company_info': '/api/settings/company',
+
         # PUT
-        'put_bank_detail': '/api/settings/bank-detail'
+        'put_bank_detail': '/api/settings/bank-detail',
+
+        #DELETE
+        'delete_bank_detail': '/api/settings/bank-detail'
     }
     return DOMAIN + routePM[route_name]
 

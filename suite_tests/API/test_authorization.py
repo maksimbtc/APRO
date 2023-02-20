@@ -4,7 +4,8 @@ from base.apibase import *
 from suite_tests.API.config.header import Header
 
 
-@pytest.mark.authorization_api
+@pytest.mark.AuthAPI
+@pytest.mark.API
 def test_authorization():
     headers = Header()
     body = {
