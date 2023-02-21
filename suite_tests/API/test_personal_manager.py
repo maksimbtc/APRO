@@ -4,7 +4,8 @@ from base.apibase import *
 from suite_tests.API.config.header import Header
 
 
-@pytest.mark.personal_manager_api
+@pytest.mark.PersonalManagerAPI
+@pytest.mark.API
 def test_get_personal_manager():
     headers = Header(get_user_token())
 
@@ -16,7 +17,8 @@ def test_get_personal_manager():
     assert response.status_code == 200, 'User has personal manager'
 
 
-@pytest.mark.personal_manager_api
+@pytest.mark.PersonalManagerAPI
+@pytest.mark.API
 def test_set_personal_manager_rating_without_pm():
     headers = Header(get_user_token())
 

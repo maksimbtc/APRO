@@ -1,0 +1,48 @@
+{
+  "data": {
+    "company": {
+      "companyName": "SaS AUTODOC FRANCE",
+      "carServiceName": "SaS AUTODOC FRANCE",
+      "phonePrefix": null,
+      "phoneNumber": null,
+      "website": "",
+      "businessType": null,
+      "registrationNumber": "908566326",
+      "vat": "57908566326"
+    },
+    "shippingAddress": {
+      "country": {
+        "id": 7,
+        "value": "fr",
+        "label": "France"
+      },
+      "street": "Rue WASHINGTON",
+      "houseNumber": "16",
+      "city": "Paris",
+      "index": "75008",
+      "phonePrefix": {
+        "id": 7,
+        "value": "fr",
+        "label": "+33"
+      },
+      "phoneNumber": "200+002"
+    },
+    "billingAddress": {
+      "country": {
+        "id": 7,
+        "value": "fr",
+        "label": "France"
+      },
+      "street": "Rue WASHINGTON",
+      "houseNumber": "16",
+      "city": "Paris",
+      "index": "75008",
+      "phonePrefix": {
+        "id": 7,
+        "value": "fr",
+        "label": "+33"
+      },
+      "phoneNumber": "200+002"
+    }
+  }
+}
