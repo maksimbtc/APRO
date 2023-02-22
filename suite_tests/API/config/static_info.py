@@ -2,7 +2,7 @@
 DOMAIN = 'https://stage-v10.api.autodoc.pro'
 
 # Account settings
-LOGIN_CRED = 'test_customer3@autodoc.pro'
+LOGIN_CRED = 'test_customer4@autodoc.pro'
 PASSWORD_CRED = '12345678'
 
 # Bank account SEPA settings
