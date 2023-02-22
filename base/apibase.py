@@ -4,6 +4,30 @@ from suite_tests.API.config.header import Header
 from suite_tests.API.config.static_info import *
 
 
+def put_basket(route: str, id) -> str:
+    route_name = route.lower()
+    routeAuth = {
+        # PUT
+        'basket-alternative-id': f'/api/basket-product/{id}/alternative'
+    }
+    return DOMAIN + routeAuth[route_name]
+
+
+def get_route_basket(route: str) -> str:
+    route_name = route.lower()
+    routeAuth = {
+        # GET
+        'get-basket': '/api/basket',
+        # DELETE basket-tab
+        'delete-basket-tab': '/api/basket-tab/',
+        # POST basket-product
+        'post-product': '/api/basket-product',
+        # PUT basket-product/{id}
+        'basket-product-id': '/api/basket-product/'
+    }
+    return DOMAIN + routeAuth[route_name]
+
+
 def get_route_auth(route: str) -> str:
     route_name = route.lower()
     routeAuth = {
@@ -36,7 +60,7 @@ def get_route_settings(route: str) -> str:
         # PUT
         'put_bank_detail': '/api/settings/bank-detail',
 
-        #DELETE
+        # DELETE
         'delete_bank_detail': '/api/settings/bank-detail'
     }
     return DOMAIN + routePM[route_name]
