@@ -22,7 +22,7 @@ def test_get_personal_manager():
 def test_set_personal_manager_rating_without_pm():
     headers = Header(get_user_token())
 
-    body = {"rating": 1, "comment": "Some comment"}
+    body = {"rating": 1, "comment": "comment"}
 
     response = requests.post(
         get_route_personal_manager('set_personal_manager_rating'),

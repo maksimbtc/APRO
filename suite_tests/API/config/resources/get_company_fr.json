@@ -3,12 +3,20 @@
     "company": {
       "companyName": "SaS AUTODOC FRANCE",
       "carServiceName": "SaS AUTODOC FRANCE",
-      "phonePrefix": null,
-      "phoneNumber": null,
-      "website": "",
-      "businessType": null,
-      "registrationNumber": "908566326",
-      "vat": "57908566326"
+      "phonePrefix": {
+        "id": 7,
+        "value": "fr",
+        "label": "+33"
+      },
+      "phoneNumber": "200+002",
+      "website": "https://test-website.com",
+      "businessType": {
+        "id": 3,
+        "value": "agents",
+        "label": "Agent de marque (Renault, VW, Ford)"
+      },
+      "registrationNumber": "91750917734",
+      "vat": "91750917734"
     },
     "shippingAddress": {
       "country": {
@@ -25,7 +33,8 @@
         "value": "fr",
         "label": "+33"
       },
-      "phoneNumber": "200+002"
+      "phoneNumber": "200+002",
+      "additionalDetails": "Test comment"
     },
     "billingAddress": {
       "country": {
@@ -42,7 +51,8 @@
         "value": "fr",
         "label": "+33"
       },
-      "phoneNumber": "200+002"
+      "phoneNumber": "200+002",
+      "additionalDetails": "Test comment"
     }
   }
 }
