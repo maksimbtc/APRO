@@ -1,8 +1,6 @@
 import pytest
-import requests
-import unittest
-from suite_tests.API.config.header import Header
 from base.apibase import *
+
 
 headers = Header(get_user_token())
 
@@ -95,3 +93,6 @@ def test_alternative_basket():
     get_response_data = get_response2.json()
     product_id_updated = get_response_data["data"]["tabs"][0]["products"][0]["id"]
     assert product_id_updated != product_id
+
+
+
