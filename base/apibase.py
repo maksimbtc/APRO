@@ -1,5 +1,6 @@
+import json
+import os
 import requests
-
 from suite_tests.API.config.header import Header
 from suite_tests.API.config.static_info import *
 
@@ -59,6 +60,7 @@ def get_route_settings(route: str) -> str:
 
         # PUT
         'put_bank_detail': '/api/settings/bank-detail',
+        'put_company_inf': '/api/settings/company',
 
         # DELETE
         'delete_bank_detail': '/api/settings/bank-detail'
@@ -84,7 +86,13 @@ def get_user_token() -> str:
         headers=headers.get_header(),
         json=body
     )
-
     token = response.json()["data"]["token"]
-
     return 'Bearer ' + token
+
+
+def get_json_file(file_name):
+    path = os.path.join('suite_tests', 'API', 'config', 'resources', file_name)
+    with open(path) as f:
+        json_object = json.load(f)
+
+    return json_object
