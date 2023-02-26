@@ -1,4 +1,5 @@
 import pytest
+import requests
 
 from base.apibase import *
 

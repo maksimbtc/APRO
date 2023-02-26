@@ -1,4 +1,5 @@
 import pytest
+import requests
 
 from base.apibase import *
 from suite_tests.API.config.header import Header

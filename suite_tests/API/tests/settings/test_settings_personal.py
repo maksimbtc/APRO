@@ -1,4 +1,6 @@
 import pytest
+import requests
+
 from base.apibase import *
 
 
@@ -28,12 +30,11 @@ def test_update_bank_detail(auth):
 
 @pytest.mark.Settings
 @pytest.mark.API
-def test_get_bank_detail(auth):
+def test_get_bank_detail(auth, add_bank_details):
     """
     Check
     :param auth:
     """
-    test_update_bank_detail()
     response = requests.get(
         route_settings('get_bank_detail'),
         headers=auth
@@ -47,12 +48,11 @@ def test_get_bank_detail(auth):
 
 @pytest.mark.Settings
 @pytest.mark.API
-def test_delete_bank_detail(auth):
+def test_delete_bank_detail(auth, add_bank_details):
     """
     Check deleting bank detail information (alias, iban, bic)
     :param auth:
     """
-    test_update_bank_detail()
 
     deleted_bank_details_response = requests.delete(
         route_settings('delete_bank_detail'),
