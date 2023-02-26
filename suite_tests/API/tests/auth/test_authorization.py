@@ -14,7 +14,7 @@ def test_authorization():
     }
 
     response = requests.post(
-        get_route_auth('login'),
+        route_auth('login'),
         headers=headers.get_header(),
         json=body)
 
