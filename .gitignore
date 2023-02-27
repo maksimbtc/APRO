@@ -134,3 +134,7 @@ dmypy.json
 
 # Bite files
 .pyc
+
+base/static_info.py
+report/report.html
+
