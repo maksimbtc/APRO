@@ -1,4 +1,5 @@
 import pytest
+import requests
 
 from base.apibase import *
 from suite_tests.API.config.header import Header
@@ -14,7 +15,7 @@ def test_authorization():
     }
 
     response = requests.post(
-        get_route_auth('login'),
+        route_auth('login'),
         headers=headers.get_header(),
         json=body)
 
