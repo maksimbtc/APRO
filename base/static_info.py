@@ -1,5 +1,5 @@
 # General
-DOMAIN = 'https://stage-v10.api.autodoc.pro'
+DOMAIN = ''
 
 # Account settings
 LOGIN_CRED = ''
