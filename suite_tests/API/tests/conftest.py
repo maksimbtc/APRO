@@ -3,7 +3,7 @@ import requests
 
 from base.apibase import route_auth, route_settings
 from suite_tests.API.config.header import Header
-from suite_tests.API.config.static_info import LOGIN_CRED, PASSWORD_CRED, NAME_SEPA, IBAN_SEPA, BIC_SEPA
+from base.static_info import LOGIN_CRED, PASSWORD_CRED, NAME_SEPA, IBAN_SEPA, BIC_SEPA
 
 
 @pytest.fixture(scope="session", autouse=True)

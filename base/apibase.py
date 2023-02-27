@@ -1,6 +1,6 @@
 import json
 import os
-from suite_tests.API.config.static_info import *
+from base.static_info import *
 
 
 def put_basket(route: str, product_id: str) -> str:
