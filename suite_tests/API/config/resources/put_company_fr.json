@@ -1,13 +1,13 @@
 {
   "company": {
-    "companyName": "SaS AUTODOC FRANCE",
-    "carServiceName": "SaS AUTODOC FRANCE",
+    "companyName": "Sarl 2s Util'autos",
+    "carServiceName": "Sarl 2s Util'autos",
     "registrationNumber": "91750917734",
     "vat": "91750917734",
     "phonePrefix": {
       "id": 7,
-      "value": "value",
-      "label": "Valeur"
+      "value": "fr",
+      "label": "+33"
     },
     "phoneNumber": "200+002",
     "website": "https://test-website.com",
@@ -20,13 +20,13 @@
   "shippingAddress": {
     "country": {
       "id": 7,
-      "value": "FR",
+      "value": "fr",
       "label": "France"
     },
-    "city": "Paris",
-    "street": "Rue WASHINGTON",
-    "houseNumber": "16",
-    "index": "75008",
+    "city": "Toulouges",
+    "street": "Josef-Orlopp-Straße",
+    "houseNumber": "9",
+    "index": "66350",
     "phonePrefix": {
       "id": 7,
       "value": "fr",
@@ -41,10 +41,10 @@
       "value": "fr",
       "label": "France"
     },
-    "city": "Paris",
-    "street": "Rue WASHINGTON",
-    "houseNumber": "16",
-    "index": "75008",
+    "city": "Toulouges",
+    "street": "Josef-Orlopp-Straße",
+    "houseNumber": "9",
+    "index": "66350",
     "phonePrefix": {
       "id": 7,
       "value": "fr",
