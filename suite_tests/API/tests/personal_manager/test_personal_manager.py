@@ -15,7 +15,7 @@ def test_get_personal_manager(auth):
         route_personal_manager('get_personal_manager'),
         headers=auth)
 
-    assert response.status_code == 200, 'User has no personal manager'
+    assert response.status_code == 200, 'User has not personal manager'
 
 
 @pytest.mark.PersonalManagerAPI

@@ -55,10 +55,12 @@ def route_settings(route: str) -> str:
         # GET
         'get_bank_detail': '/api/settings/bank-detail',
         'get_company_info': '/api/settings/company',
+        'get_working_hours': '/api/settings/working-hours',
 
         # PUT
         'put_bank_detail': '/api/settings/bank-detail',
         'put_company_information': '/api/settings/company',
+        'put_working_hours': '/api/settings/working-hours',
 
         # DELETE
         'delete_bank_detail': '/api/settings/bank-detail'
