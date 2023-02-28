@@ -22,7 +22,7 @@ def test_update_bank_detail(auth):
         json=body,
         headers=auth)
 
-    assert response.status_code == 200, 'Bank detail settings was not updated'
+    assert response.status_code == 200, 'Bank detail profile was not updated'
     assert response.json()["data"]["alias"] == NAME_SEPA, 'Incorrect Sepa name'
     assert response.json()["data"]["iban"] == IBAN_SEPA, 'Incorrect Sepa IBAN'
     assert response.json()["data"]["bic"] == BIC_SEPA, 'Incorrect Sepa BIC'
@@ -92,12 +92,12 @@ def test_update_company_name(auth):
     :param auth:
     """
     updated_company_name_response = requests.put(
-        route_settings('put_company_inf'),
+        route_settings('put_company_information'),
         headers=auth,
         json=get_json_file('put_company_fr.json')
     )
-
-    assert updated_company_name_response.status_code == 200, 'Company info service is not available'
+    print(get_json_file('put_company_fr.json'))
+    assert updated_company_name_response.status_code == 200, updated_company_name_response.text
 
     expected_data = get_json_file('get_company_fr.json')
     actual_data = json.loads(updated_company_name_response.content)

@@ -43,4 +43,4 @@ def add_bank_details(auth):
         json=body,
         headers=auth)
 
-    assert response.status_code == 200, 'Bank detail settings was not updated'
+    assert response.status_code == 200, 'Bank detail profile was not updated'

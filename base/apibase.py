@@ -41,10 +41,10 @@ def route_personal_manager(route: str) -> str:
     route_name = route.lower()
     routes = {
         # GET
-        'get_personal_manager': '/api/profile/personal-manager',
+        'get_personal_manager': '/api/personal_manager/personal-manager',
 
         # POST
-        'set_personal_manager_rating': '/api/profile/personal-manager/rating'
+        'set_personal_manager_rating': '/api/personal_manager/personal-manager/rating'
     }
     return DOMAIN + routes[route_name]
 
@@ -58,7 +58,7 @@ def route_settings(route: str) -> str:
 
         # PUT
         'put_bank_detail': '/api/settings/bank-detail',
-        'put_company_inf': '/api/settings/company',
+        'put_company_information': '/api/settings/company',
 
         # DELETE
         'delete_bank_detail': '/api/settings/bank-detail'
@@ -76,7 +76,7 @@ def get_password_credentials() -> str:
 
 def get_json_file(file_name):
     path = os.path.join('suite_tests', 'API', 'config', 'resources', file_name)
-    with open(path) as f:
+    with open(path, 'r', encoding='utf-8') as f:
         json_object = json.load(f)
 
     return json_object
