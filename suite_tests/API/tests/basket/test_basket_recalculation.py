@@ -38,3 +38,7 @@ def test_recalculation_basket(auth):
     print(f"total_price: {total_price}, calculated_total_price: {calculated_total_price}")
 
     assert math.isclose(total_price, calculated_total_price, rel_tol=1e-9, abs_tol=0.0)
+    return total_price, calculated_total_price
+
+#print(f"Calculated total price: {calculated_price}")
+#print(f"Total price: {total_price}")
