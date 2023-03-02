@@ -3,6 +3,15 @@ import os
 from base.static_info import *
 
 
+def put_basket_checkbox(route: str, tab: str) -> str:
+    route_name = route.lower()
+    routes = {
+        # PUT
+        'basket-checkbox-id': f'/api/basket-tab/{tab}'
+    }
+    return DOMAIN + routes[route_name]
+
+
 def put_basket(route: str, product_id: str) -> str:
     route_name = route.lower()
     routes = {
