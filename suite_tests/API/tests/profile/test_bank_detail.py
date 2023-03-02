@@ -6,6 +6,7 @@ from base.apibase import *
 
 @pytest.mark.Settings
 @pytest.mark.API
+@pytest.mark.usefixtures('add_bank_details')
 def test_update_bank_detail(auth):
     """
     Check update bank details (alias, iban, bic)
@@ -30,7 +31,8 @@ def test_update_bank_detail(auth):
 
 @pytest.mark.Settings
 @pytest.mark.API
-def test_get_bank_detail(auth, add_bank_details):
+@pytest.mark.usefixtures('add_bank_details')
+def test_get_bank_detail(auth):
     """
     Check
     :param auth:
@@ -48,6 +50,7 @@ def test_get_bank_detail(auth, add_bank_details):
 
 @pytest.mark.Settings
 @pytest.mark.API
+@pytest.mark.usefixtures('add_bank_details')
 def test_delete_bank_detail(auth, add_bank_details):
     """
     Check deleting bank detail information (alias, iban, bic)
