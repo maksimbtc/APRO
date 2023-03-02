@@ -45,7 +45,7 @@ def add_bank_details(auth):
     assert response.status_code == 200, 'Bank detail profile was not updated'
 
 
-@pytest.fixture(scope="session", autouse=True)
+@pytest.fixture(scope="session")
 def add_working_hours(auth):
     """
     Setup for garage working hours

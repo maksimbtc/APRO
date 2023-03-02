@@ -5,7 +5,8 @@ from base.apibase import *
 
 
 @pytest.mark.Settings
-@pytest.mark.API
+@pytest.mark.hours
+@pytest.mark.usefixtures('add_working_hours')
 def test_get_working_hours(auth):
     """
     Check the garage working hours

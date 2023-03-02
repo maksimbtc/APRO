@@ -1,7 +1,7 @@
 import requests
 import json
+from base.static_info import SWAGGER_DOMAIN
 
-SWAGGER_DOMAIN = 'https://stage-v10.api.autodoc.pro/api/docs/version/v10'
 
 
 def get_keys_and_methods_by_prefix(data, prefix):
@@ -13,6 +13,7 @@ def get_keys_and_methods_by_prefix(data, prefix):
             keys.append(key)
             methods.append(list(paths[key].keys()))
     return keys, methods
+
 
 response = requests.get(SWAGGER_DOMAIN)
 data = json.loads(response.content)
