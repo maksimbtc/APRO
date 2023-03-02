@@ -26,14 +26,24 @@ def route_basket(route: str) -> str:
     }
     return DOMAIN + routes[route_name]
 
+
+def route_auth(route: str) -> str:
+    route_name = route.lower()
+    routes = {
+        # POST
+        'login': '/api/auth/login'
+    }
+    return DOMAIN + routes[route_name]
+
+
 def route_personal_manager(route: str) -> str:
     route_name = route.lower()
     routes = {
         # GET
-        'get_personal_manager': '/api/profile/personal-manager',
+        'get_personal_manager': '/api/personal-manager/personal-manager',
 
         # POST
-        'set_personal_manager_rating': '/api/profile/personal-manager/rating'
+        'set_personal_manager_rating': '/api/personal-manager/personal-manager/rating'
     }
     return DOMAIN + routes[route_name]
 
