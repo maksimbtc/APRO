@@ -22,6 +22,7 @@ keys, methods = get_keys_and_methods_by_prefix(data, prefix)
 
 # список покрытых тестами роутов и методов
 covered_routes = {
+    '/api/auth/login': ['post'],
     '/api/basket-product/{id}/alternative': ['put'],
     '/api/basket': ['get'],
     '/api/basket-tab/{id}': ['delete'],
