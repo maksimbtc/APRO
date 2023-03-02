@@ -1,7 +1,7 @@
 import pytest
 import requests
 
-from base.apibase import route_auth, route_settings, get_json_file
+from base.apibase import route_auth, route_settings, get_json_file, route_basket
 from suite_tests.API.config.header import Header
 from base.static_info import LOGIN_CRED, PASSWORD_CRED, NAME_SEPA, IBAN_SEPA, BIC_SEPA
 
@@ -58,3 +58,24 @@ def add_working_hours(auth):
         headers=auth)
 
     assert response.status_code == 200, 'Garage working hours ware not updated'
+
+
+@pytest.fixture(scope="session")
+def test_add_product_basket(auth):
+    """
+    Check adding product to basket
+    :param auth:
+    """
+    product = {
+        "vehicleId": 56872,
+        "tabType": 2,
+        "tabTitle": "TOYOTA COROLLA (ZZE12, NDE12)",
+        "articleId": 755399,
+        "quantity": 1
+    }
+    added_basket_product_response = requests.post(
+        route_basket('post-product'),
+        json=product,
+        headers=auth)
+
+    assert added_basket_product_response.status_code == 204, "Product was not added"
