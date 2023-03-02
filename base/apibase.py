@@ -40,7 +40,6 @@ def route_auth(route: str) -> str:
     route_name = route.lower()
     routes = {
         # POST
-        'forgot-password': '/api/auth/forgot-password',
         'login': '/api/auth/login'
     }
     return DOMAIN + routes[route_name]
@@ -50,10 +49,10 @@ def route_personal_manager(route: str) -> str:
     route_name = route.lower()
     routes = {
         # GET
-        'get_personal_manager': '/api/personal_manager/personal-manager',
+        'get_personal_manager': '/api/personal-manager/personal-manager',
 
         # POST
-        'set_personal_manager_rating': '/api/personal_manager/personal-manager/rating'
+        'set_personal_manager_rating': '/api/personal-manager/personal-manager/rating'
     }
     return DOMAIN + routes[route_name]
 
@@ -64,10 +63,12 @@ def route_settings(route: str) -> str:
         # GET
         'get_bank_detail': '/api/settings/bank-detail',
         'get_company_info': '/api/settings/company',
+        'get_working_hours': '/api/settings/working-hours',
 
         # PUT
         'put_bank_detail': '/api/settings/bank-detail',
         'put_company_information': '/api/settings/company',
+        'put_working_hours': '/api/settings/working-hours',
 
         # DELETE
         'delete_bank_detail': '/api/settings/bank-detail'
