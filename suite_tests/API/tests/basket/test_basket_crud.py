@@ -152,10 +152,13 @@ def test_all_checkbox_basket(auth):
         json=body)
 
     assert put_response.status_code == 200
+    response_json = put_response.json()
+    assert response_json['data']['selected'] == 'empty'
 
 
 @pytest.mark.tab_checkbox
 @pytest.mark.API
+@pytest.mark.usefixtures('test_add_product_basket')
 def test_tab_checkbox_basket(auth):
     """
     Check updated alternative basket
@@ -166,14 +169,23 @@ def test_tab_checkbox_basket(auth):
         headers=auth)
 
     assert basket_response.status_code == 200
-    tab = basket_response.json()["data"]["tabs"][0]["id"]
-    body = {
-        "selected": "all"
-    }
-    put_response = requests.put(
-        put_basket_checkbox('basket-checkbox-id', tab),
-        headers=auth,
-        json=body)
+    for tab_item in basket_response.json()["data"]["tabs"]:
+        tab_id = tab_item["id"]
+        body = {
+            "selected": "all"
+        }
+        put_response = requests.put(
+            put_basket_checkbox('basket-checkbox-id', tab_id),
+            headers=auth,
+            json=body)
+        assert put_response.status_code == 200
+    updated_basket_response = requests.get(
+        route_basket('get-basket'),
+        headers=auth)
 
-    assert put_response.status_code == 200
-    print(put_response.text)
+    assert updated_basket_response.status_code == 200
+
+    updated_tabs = updated_basket_response.json()["data"]["tabs"]
+
+    for updated_tab in updated_tabs:
+        assert updated_tab["selected"] == "all"
