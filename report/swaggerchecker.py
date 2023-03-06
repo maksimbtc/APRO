@@ -3,7 +3,6 @@ import json
 from base.static_info import SWAGGER_DOMAIN
 
 
-
 def get_keys_and_methods_by_prefix(data, prefix):
     paths = data.get('paths', {})
     keys = []
@@ -21,23 +20,19 @@ prefix = "/api/"
 
 keys, methods = get_keys_and_methods_by_prefix(data, prefix)
 
-# список покрытых тестами роутов и методов
+# Список покрытых тестами роутов и методов
 covered_routes = {
     '/api/auth/login': ['post'],
     '/api/basket-product/{id}/alternative': ['put'],
-    '/api/basket': ['get'],
-    '/api/basket-tab/{id}': ['delete'],
+    '/api/basket': ['get', 'put'],
+    '/api/basket-tab/{id}': ['put', 'delete'],
     '/api/basket-product': ['post'],
-    '/api/basket-product/{id}': ['put'],
+    '/api/basket-product/{id}': ['put', 'delete'],
     '/api/profile/personal-manager': ['get'],
     '/api/profile/personal-manager/rating': ['post'],
-    '/api/settings/bank-detail': ['get'],
-    '/api/settings/company': ['get'],
-    '/api/settings/working-hours': ['get'],
-    '/api/settings/bank-detail': ['put'],
-    '/api/settings/company': ['put'],
-    '/api/settings/working-hours': ['put'],
-    '/api/settings/bank-detail': ['delete']
+    '/api/settings/bank-detail': ['get', 'put', 'delete'],
+    '/api/settings/company': ['get', 'put'],
+    '/api/settings/working-hours': ['get', 'put']
 }
 
 covered = []
@@ -46,14 +41,14 @@ uncovered = []
 for i in range(len(keys)):
     route = keys[i]
     route_methods = methods[i]
-    if route in covered_routes:
+    if route in covered_routes.keys():
         for method in route_methods:
-            if method in covered_routes[route]:
-                covered.append(f"{route} ({method})")
+            if method.lower() in covered_routes[route]:
+                covered.append(f"{route} ({method.lower()})")
             else:
-                uncovered.append(f"{route} ({method})")
+                uncovered.append(f"{route} ({method.lower()})")
     else:
-        uncovered.extend([f"{route} ({method})" for method in route_methods])
+        uncovered.extend([f"{route} ({method.lower()})" for method in route_methods])
 
 print("Covered routes:")
 for route in covered:

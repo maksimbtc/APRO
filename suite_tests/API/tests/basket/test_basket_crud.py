@@ -62,7 +62,7 @@ def test_add_product_basket(auth):
     test_recalculation_basket(auth)
 
 
-@pytest.mark.add_product_basket
+@pytest.mark.change_qty_basket
 @pytest.mark.API
 def test_change_qty_basket(auth):
     """
@@ -97,7 +97,7 @@ def test_change_qty_basket(auth):
     test_recalculation_basket(auth)
 
 
-@pytest.mark.add_product_basket
+@pytest.mark.alternative_basket
 @pytest.mark.API
 def test_alternative_basket(auth):
     """
@@ -131,6 +131,7 @@ def test_alternative_basket(auth):
 
 @pytest.mark.all_checkbox
 @pytest.mark.API
+@pytest.mark.usefixtures('test_add_product_basket')
 def test_all_checkbox_basket(auth):
     """
     Check updated alternative basket
@@ -158,7 +159,6 @@ def test_all_checkbox_basket(auth):
 
 @pytest.mark.tab_checkbox
 @pytest.mark.API
-@pytest.mark.usefixtures('test_add_product_basket')
 def test_tab_checkbox_basket(auth):
     """
     Check updated alternative basket
@@ -189,3 +189,25 @@ def test_tab_checkbox_basket(auth):
 
     for updated_tab in updated_tabs:
         assert updated_tab["selected"] == "all"
+
+
+@pytest.mark.product_id_delete
+@pytest.mark.API
+@pytest.mark.usefixtures('test_add_product_basket_two')
+def test_product_id_delete(auth):
+    """
+    Check updating product quantity
+    :param auth:
+    """
+    basket_response = requests.get(
+        route_basket('get-basket'),
+        headers=auth)
+
+    assert basket_response.status_code == 200
+
+    product_id = basket_response.json()["data"]["tabs"][0]["products"][0]["id"]
+    basket_product_delete = requests.delete(
+        f"{route_basket('basket-product-id')}{product_id}",
+        headers=auth)
+
+    assert basket_product_delete.status_code == 204

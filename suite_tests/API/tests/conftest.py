@@ -79,3 +79,23 @@ def test_add_product_basket(auth):
         headers=auth)
 
     assert added_basket_product_response.status_code == 204, "Product was not added"
+
+
+@pytest.fixture(scope="session")
+def test_add_product_basket_two(auth):
+    """
+    Check adding product to basket
+    :param auth:
+    """
+    product = {
+        "vehicleId": 142911,
+        "tabType": 2,
+        "articleId": 959293,
+        "quantity": 2
+    }
+    added_basket_product_response = requests.post(
+        route_basket('post-product'),
+        json=product,
+        headers=auth)
+
+    assert added_basket_product_response.status_code == 204, "Product was not added"
