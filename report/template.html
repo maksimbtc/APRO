@@ -1,27 +1,66 @@
 <!DOCTYPE html>
 <html>
 <head>
+    <style>
+		body {
+			font-family: Arial, sans-serif;
+			background-color: #132530;
+		}
+		h1 {
+			font-size: 28px;
+			margin-top: 50px;
+			margin-bottom: 20px;
+		}
+		ul {
+			margin-top: 10px;
+			margin-bottom: 30px;
+			padding-left: 0;
+			list-style: none;
+		}
+		li {
+			padding: 5px;
+			background-color: #fff;
+			border: 1px solid #ccc;
+			border-radius: 3px;
+			margin-bottom: 5px;
+		}
+		.covered {
+			color: #3c763d;
+			background-color: #dff0d8;
+			border-color: #d6e9c6;
+		}
+		.uncovered {
+			color: #a94442;
+			background-color: #f2dede;
+			border-color: #ebccd1;
+		}
+		h1 {
+			color: #ffffff;
+		}
+	</style>
     <meta charset="UTF-8">
     <title>Covered and Uncovered Routes</title>
 </head>
 <body>
-    <img src="https://test.autodoc.pro/assets/images/pro-logo-light-mobile.svg" alt="Autodoc logo">
-    <style>
-    body {
-        background-color: grey;
-    }
-</style>
+    <img src="https://test.autodoc.pro/assets/images/pro-logo-light.svg" alt="Autodoc logo">
+
+	<div style="background-color: lightgray; width: 200px;">
+  		<div style="background-color: green; width: {{ coverage_percentage }}%;">
+    		{{ coverage_percentage }}%
+  		</div>
+	</div>
+
     <h1>Covered Routes</h1>
-    <ul>
-        {% for route in covered %}
-        <li>{{ route }}</li>
-        {% endfor %}
-    </ul>
-    <h1>Uncovered Routes</h1>
-    <ul>
-        {% for route in uncovered %}
-        <li>{{ route }}</li>
-        {% endfor %}
-    </ul>
+	<ul>
+		{% for route in covered %}
+		<li class="covered">{{ route }}</li>
+		{% endfor %}
+	</ul>
+	<h1>Uncovered Routes</h1>
+	<ul>
+		{% for route in uncovered %}
+		<li class="uncovered">{{ route }}</li>
+		{% endfor %}
+	</ul>
 </body>
 </html>
