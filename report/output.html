@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+		body {
+			font-family: Arial, sans-serif;
+			background-color: #132530;
+		}
+		h1 {
+			font-size: 28px;
+			margin-top: 50px;
+			margin-bottom: 20px;
+		}
+		ul {
+			margin-top: 10px;
+			margin-bottom: 30px;
+			padding-left: 0;
+			list-style: none;
+		}
+		li {
+			padding: 5px;
+			background-color: #fff;
+			border: 1px solid #ccc;
+			border-radius: 3px;
+			margin-bottom: 5px;
+		}
+		.covered {
+			color: #3c763d;
+			background-color: #dff0d8;
+			border-color: #d6e9c6;
+		}
+		.uncovered {
+			color: #a94442;
+			background-color: #f2dede;
+			border-color: #ebccd1;
+		}
+		h1 {
+			color: #ffffff;
+		}
+	</style>
+    <meta charset="UTF-8">
+    <title>Covered and Uncovered Routes</title>
+</head>
+<body>
+    <img src="https://test.autodoc.pro/assets/images/pro-logo-light.svg" alt="Autodoc logo">
+	<div style="background-color: lightgray; width: 200px;">
+  	<div style="background-color: green; width: %;">
+    %
+  	</div>
+	</div>
+    <h1>Covered Routes</h1>
+	<ul>
+		
+		<li class="covered">/api/auth/login (post)</li>
+		
+		<li class="covered">/api/basket (get)</li>
+		
+		<li class="covered">/api/basket (put)</li>
+		
+		<li class="covered">/api/basket-tab/{id} (put)</li>
+		
+		<li class="covered">/api/basket-tab/{id} (delete)</li>
+		
+		<li class="covered">/api/basket-product (post)</li>
+		
+		<li class="covered">/api/basket-product/{id} (put)</li>
+		
+		<li class="covered">/api/basket-product/{id} (delete)</li>
+		
+		<li class="covered">/api/basket-product/{id}/alternative (put)</li>
+		
+		<li class="covered">/api/profile/personal-manager (get)</li>
+		
+		<li class="covered">/api/profile/personal-manager/rating (post)</li>
+		
+		<li class="covered">/api/settings/bank-detail (get)</li>
+		
+		<li class="covered">/api/settings/bank-detail (put)</li>
+		
+		<li class="covered">/api/settings/bank-detail (delete)</li>
+		
+		<li class="covered">/api/settings/company (get)</li>
+		
+		<li class="covered">/api/settings/company (put)</li>
+		
+		<li class="covered">/api/settings/working-hours (get)</li>
+		
+		<li class="covered">/api/settings/working-hours (put)</li>
+		
+	</ul>
+	<h1>Uncovered Routes</h1>
+	<ul>
+		
+		<li class="uncovered">/api/auth/registration (post)</li>
+		
+		<li class="uncovered">/api/auth/logout (post)</li>
+		
+		<li class="uncovered">/api/auth/change-password (post)</li>
+		
+		<li class="uncovered">/api/auth/forgot-password (post)</li>
+		
+		<li class="uncovered">/api/auth/jwt/check (post)</li>
+		
+		<li class="uncovered">/api/auth/reset-password-email (post)</li>
+		
+		<li class="uncovered">/api/auth/reset-password (post)</li>
+		
+		<li class="uncovered">/api/auth/reset-password-hash-check/{hash} (get)</li>
+		
+		<li class="uncovered">/api/basket-checkout (post)</li>
+		
+		<li class="uncovered">/api/basket-address (get)</li>
+		
+		<li class="uncovered">/api/basket-address (put)</li>
+		
+		<li class="uncovered">/api/basket-pre-checkout (get)</li>
+		
+		<li class="uncovered">/api/basket-pre-checkout (patch)</li>
+		
+		<li class="uncovered">/api/bonus/transaction (get)</li>
+		
+		<li class="uncovered">/api/bonus/history (get)</li>
+		
+		<li class="uncovered">/api/bonus/balance (get)</li>
+		
+		<li class="uncovered">/api/bonus/refill (post)</li>
+		
+		<li class="uncovered">/api/bonus/write-off (post)</li>
+		
+		<li class="uncovered">/api/call-back (post)</li>
+		
+		<li class="uncovered">/api/catalog/category/parent (get)</li>
+		
+		<li class="uncovered">/api/catalog/category/{id}/sub-category (get)</li>
+		
+		<li class="uncovered">/api/catalog/category/{id}/sub-child-category (get)</li>
+		
+		<li class="uncovered">/api/client (get)</li>
+		
+		<li class="uncovered">/api/client (post)</li>
+		
+		<li class="uncovered">/api/client/{id} (get)</li>
+		
+		<li class="uncovered">/api/client/{id} (put)</li>
+		
+		<li class="uncovered">/api/client/{id} (delete)</li>
+		
+		<li class="uncovered">/api/client/search (get)</li>
+		
+		<li class="uncovered">/api/client/hint (get)</li>
+		
+		<li class="uncovered">/api/client-vehicle (get)</li>
+		
+		<li class="uncovered">/api/client-vehicle/{id} (post)</li>
+		
+		<li class="uncovered">/api/client-vehicle/{id} (delete)</li>
+		
+		<li class="uncovered">/api/client-vehicle/update/{id} (post)</li>
+		
+		<li class="uncovered">/api/client-vehicle/preview (get)</li>
+		
+		<li class="uncovered">/api/customer/status (post)</li>
+		
+		<li class="uncovered">/api/customer/notification/personal-manager-visit (post)</li>
+		
+		<li class="uncovered">/api/debug/customer/status (post)</li>
+		
+		<li class="uncovered">/api/debug/loyalty/status/{customerId} (get)</li>
+		
+		<li class="uncovered">/api/debug/loyalty/set-customer-status/{customerId} (post)</li>
+		
+		<li class="uncovered">/api/debug/customer/search (get)</li>
+		
+		<li class="uncovered">/api/dropdown-option/public (get)</li>
+		
+		<li class="uncovered">/api/dropdown-option/private (get)</li>
+		
+		<li class="uncovered">/api/genesys-data (get)</li>
+		
+		<li class="uncovered">/api/labor (get)</li>
+		
+		<li class="uncovered">/api/lead (post)</li>
+		
+		<li class="uncovered">/api/lead/invited (post)</li>
+		
+		<li class="uncovered">/api/lead/invited/email (get)</li>
+		
+		<li class="uncovered">/api/lead/{hash}/profile (get)</li>
+		
+		<li class="uncovered">/api/lead/{hash}/company-information (post)</li>
+		
+		<li class="uncovered">/api/lead/{hash}/address (post)</li>
+		
+		<li class="uncovered">/api/lead/{hash}/contact-details (post)</li>
+		
+		<li class="uncovered">/api/loyalty/status/{customerId} (get)</li>
+		
+		<li class="uncovered">/api/loyalty/status-history/{customerId} (get)</li>
+		
+		<li class="uncovered">/api/loyalty/progress (get)</li>
+		
+		<li class="uncovered">/api/loyalty/bonus/amount/{customerId} (get)</li>
+		
+		<li class="uncovered">/api/loyalty/bonus/list/{customerId} (get)</li>
+		
+		<li class="uncovered">/api/loyalty/level (get)</li>
+		
+		<li class="uncovered">/api/loyalty/level/{id} (patch)</li>
+		
+		<li class="uncovered">/api/order (get)</li>
+		
+		<li class="uncovered">/api/order/{id} (get)</li>
+		
+		<li class="uncovered">/api/order/{id}/download-invoice (get)</li>
+		
+		<li class="uncovered">/api/payment/sepa/mandate (post)</li>
+		
+		<li class="uncovered">/api/payment/sepa/mandate (patch)</li>
+		
+		<li class="uncovered">/api/payment/sepa/mandate (get)</li>
+		
+		<li class="uncovered">/api/payment/sepa/mandate (delete)</li>
+		
+		<li class="uncovered">/api/permission (get)</li>
+		
+		<li class="uncovered">/api/profile/personal-manager/call-back (post)</li>
+		
+		<li class="uncovered">/api/product (get)</li>
+		
+		<li class="uncovered">/api/product/{id} (get)</li>
+		
+		<li class="uncovered">/api/product/{id} (patch)</li>
+		
+		<li class="uncovered">/api/product/{id}/oe-number (get)</li>
+		
+		<li class="uncovered">/api/product/oem/{searchNumber} (get)</li>
+		
+		<li class="uncovered">/api/product-alternative (get)</li>
+		
+		<li class="uncovered">/api/product-faq (get)</li>
+		
+		<li class="uncovered">/api/product-faq (post)</li>
+		
+		<li class="uncovered">/api/product/{id}/maker (get)</li>
+		
+		<li class="uncovered">/api/product/{id}/maker/{makerId}/model (get)</li>
+		
+		<li class="uncovered">/api/product/{id}/maker/{makerId}/model/{modelId}/vehicle (get)</li>
+		
+		<li class="uncovered">/api/profile (get)</li>
+		
+		<li class="uncovered">/api/repair-estimate/saved-basket (post)</li>
+		
+		<li class="uncovered">/api/repair-estimate/basket (post)</li>
+		
+		<li class="uncovered">/api/repair-estimate (get)</li>
+		
+		<li class="uncovered">/api/repair-estimate/{id} (get)</li>
+		
+		<li class="uncovered">/api/repair-estimate/{id} (patch)</li>
+		
+		<li class="uncovered">/api/repair-estimate/{id} (delete)</li>
+		
+		<li class="uncovered">/api/repair-estimate/{id}/download (get)</li>
+		
+		<li class="uncovered">/api/repair-estimate/{id}/print (get)</li>
+		
+		<li class="uncovered">/api/repair-estimate/{id}/send-to-email (post)</li>
+		
+		<li class="uncovered">/api/repair-estimate-labor/ (post)</li>
+		
+		<li class="uncovered">/api/repair-estimate-labor/{id} (patch)</li>
+		
+		<li class="uncovered">/api/repair-estimate-labor/{id} (delete)</li>
+		
+		<li class="uncovered">/api/repair-estimate-product/{id} (patch)</li>
+		
+		<li class="uncovered">/api/repair-estimate-product/{id} (delete)</li>
+		
+		<li class="uncovered">/api/return/claim (get)</li>
+		
+		<li class="uncovered">/api/return/claim (post)</li>
+		
+		<li class="uncovered">/api/return/claim/{id} (get)</li>
+		
+		<li class="uncovered">/api/return/claim/{id}/files (get)</li>
+		
+		<li class="uncovered">/api/return/claim/{id}/download-credit-note (get)</li>
+		
+		<li class="uncovered">/api/return/product (get)</li>
+		
+		<li class="uncovered">/api/return/product/{id}/file (get)</li>
+		
+		<li class="uncovered">/api/return/product/{id}/file (post)</li>
+		
+		<li class="uncovered">/api/return/product/{id}/file/{fileName} (delete)</li>
+		
+		<li class="uncovered">/api/saved-basket (get)</li>
+		
+		<li class="uncovered">/api/saved-basket (post)</li>
+		
+		<li class="uncovered">/api/saved-basket/{id} (get)</li>
+		
+		<li class="uncovered">/api/saved-basket/{id} (put)</li>
+		
+		<li class="uncovered">/api/saved-basket/{id} (delete)</li>
+		
+		<li class="uncovered">/api/saved-basket/{id}/checkout (post)</li>
+		
+		<li class="uncovered">/api/saved-basket-product (post)</li>
+		
+		<li class="uncovered">/api/saved-basket-product/{id} (put)</li>
+		
+		<li class="uncovered">/api/saved-basket-product/{id} (delete)</li>
+		
+		<li class="uncovered">/api/saved-basket-product/{id}/alternative (post)</li>
+		
+		<li class="uncovered">/api/search (get)</li>
+		
+		<li class="uncovered">/api/search/autocomplete (get)</li>
+		
+		<li class="uncovered">/api/selector/maker (get)</li>
+		
+		<li class="uncovered">/api/selector/model (get)</li>
+		
+		<li class="uncovered">/api/selector/vehicle (get)</li>
+		
+		<li class="uncovered">/api/settings/representative (get)</li>
+		
+		<li class="uncovered">/api/settings/representative (put)</li>
+		
+		<li class="uncovered">/api/subscription-email (post)</li>
+		
+		<li class="uncovered">/api/health (get)</li>
+		
+		<li class="uncovered">/api/system/error-response (get)</li>
+		
+		<li class="uncovered">/api/system/validation-errors (get)</li>
+		
+		<li class="uncovered">/api/command (post)</li>
+		
+		<li class="uncovered">/api/vehicle-tab (get)</li>
+		
+		<li class="uncovered">/api/vehicle-tab (post)</li>
+		
+		<li class="uncovered">/api/vehicle-tab/{id} (patch)</li>
+		
+		<li class="uncovered">/api/vehicle-tab/{id} (delete)</li>
+		
+	</ul>
+</body>
+</html>
