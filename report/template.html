@@ -1,6 +1,8 @@
 <!DOCTYPE html>
 <html>
 <head>
+    <meta charset="UTF-8">
+    <title>Covered and Uncovered Routes</title>
     <style>
 		body {
 			font-family: Arial, sans-serif;
@@ -37,30 +39,56 @@
 		h1 {
 			color: #ffffff;
 		}
-	</style>
-    <meta charset="UTF-8">
-    <title>Covered and Uncovered Routes</title>
+
+		progress {
+    		position: relative;
+     		width: 300px;
+    		height: 30px;
+    		display: inline-block;
+    		width: calc(100% - 100px); /* или другое значение */
+  		}
+
+  		progress::after {
+			content: attr(value) '%';
+			position: absolute;
+			top: 0;
+			left: 0;
+			right: 0;
+			bottom: 0;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			font-size: 15px;
+			font-weight: bold;
+  		}
+
+  		img {
+    		display: block;
+    		margin: auto;
+  		}
+
+    </style>
 </head>
 <body>
-    <img src="https://test.autodoc.pro/assets/images/pro-logo-light.svg" alt="Autodoc logo">
+<img src="https://test.autodoc.pro/assets/images/pro-logo-light.svg" alt="Autodoc logo">
 
-	<div style="background-color: lightgray; width: 200px;">
-  		<div style="background-color: green; width: {{ coverage_percentage }}%;">
-    		{{ coverage_percentage }}%
-  		</div>
-	</div>
 
-    <h1>Covered Routes</h1>
-	<ul>
-		{% for route in covered %}
-		<li class="covered">{{ route }}</li>
-		{% endfor %}
-	</ul>
-	<h1>Uncovered Routes</h1>
-	<ul>
-		{% for route in uncovered %}
-		<li class="uncovered">{{ route }}</li>
-		{% endfor %}
-	</ul>
+<div><h1>Coverage progress:</h1></label>
+    <progress id="progress" value="{{ total }}" max="100">{{ total }}%</progress>
+</div>
+
+
+<h1>Covered Routes</h1>
+<ul>
+    {% for route in covered %}
+    <li class="covered">{{ route }}</li>
+    {% endfor %}
+</ul>
+<h1>Uncovered Routes</h1>
+<ul>
+    {% for route in uncovered %}
+    <li class="uncovered">{{ route }}</li>
+    {% endfor %}
+</ul>
 </body>
 </html>

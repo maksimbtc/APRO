@@ -51,6 +51,10 @@ for i in range(len(keys)):
     else:
         uncovered.extend([f"{route} ({method.lower()})" for method in route_methods])
 
+total_routes = len(covered) + len(uncovered)
+coverage_percentage = len(covered) / total_routes * 100
+total = round(coverage_percentage, 2)
+
 print("Covered routes:")
 for route in covered:
     print(route)
@@ -61,7 +65,7 @@ for route in uncovered:
 with open('template.html') as f:
     template = Template(f.read())
 
-html = template.render(covered=covered, uncovered=uncovered)
+html = template.render(covered=covered, uncovered=uncovered, total=total)
 
 # сохраняем результат в файл
 with open('output.html', 'w') as f:
