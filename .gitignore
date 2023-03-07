@@ -136,4 +136,5 @@ dmypy.json
 .pyc
 base/static_info.py
 report/report.html
-
+report/report.html
+report/output.html
