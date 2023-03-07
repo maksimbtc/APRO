@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Covered and Uncovered Routes</title>
+</head>
+<body>
+    <img src="https://test.autodoc.pro/assets/images/pro-logo-light-mobile.svg" alt="Autodoc logo">
+    <style>
+    body {
+        background-color: grey;
+    }
+</style>
+    <h1>Covered Routes</h1>
+    <ul>
+        {% for route in covered %}
+        <li>{{ route }}</li>
+        {% endfor %}
+    </ul>
+    <h1>Uncovered Routes</h1>
+    <ul>
+        {% for route in uncovered %}
+        <li>{{ route }}</li>
+        {% endfor %}
+    </ul>
+</body>
+</html>

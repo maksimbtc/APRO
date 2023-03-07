@@ -1,6 +1,7 @@
 import requests
 import json
 from base.static_info import SWAGGER_DOMAIN
+from jinja2 import Template
 
 
 def get_keys_and_methods_by_prefix(data, prefix):
@@ -57,3 +58,11 @@ for route in covered:
 print("\nUncovered routes:")
 for route in uncovered:
     print(route)
+with open('template.html') as f:
+    template = Template(f.read())
+
+html = template.render(covered=covered, uncovered=uncovered)
+
+# сохраняем результат в файл
+with open('output.html', 'w') as f:
+    f.write(html)

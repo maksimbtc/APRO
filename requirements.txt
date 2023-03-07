@@ -1,3 +1,11 @@
-selenium
-pytest
-requests
+selenium~=4.8.0
+pytest~=7.2.1
+requests~=2.28.2
+pip~=23.0.1
+attrs~=22.2.0
+wheel~=0.38.4
+Jinja2~=3.1.2
+setuptools~=65.5.1
+packaging~=23.0
+zipp~=3.15.0
+platformdirs~=3.0.0
