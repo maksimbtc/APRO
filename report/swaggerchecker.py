@@ -67,6 +67,5 @@ with open('template.html') as f:
 
 html = template.render(covered=covered, uncovered=uncovered, total=total)
 
-# сохраняем результат в файл
 with open('output.html', 'w') as f:
     f.write(html)

@@ -12,6 +12,17 @@ def put_basket_checkbox(route: str, tab: str) -> str:
     return DOMAIN + routes[route_name]
 
 
+def vehicle_tab(route: str, tab: str = '') -> str:
+    route_name = route.lower()
+    routes = {
+        # DELETE
+        'delete-vehicle-tab': f'/api/vehicle-tab/{tab}',
+        # GET
+        'get-vehicle-tab': '/api/vehicle-tab/'
+    }
+    return DOMAIN + routes[route_name]
+
+
 def put_basket(route: str, product_id: str) -> str:
     route_name = route.lower()
     routes = {
