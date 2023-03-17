@@ -3,6 +3,7 @@ from suite_tests.pom.login_pom import Login_POM
 
 
 @pytest.mark.usefixtures('setup')
+@pytest.mark.SmokeUI
 class TestLogInForm:
 
     def test_LogInForm(self):
