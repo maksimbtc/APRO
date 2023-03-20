@@ -7,7 +7,7 @@ from suite_tests.UI.config.api_hook import *
 @pytest.fixture
 def get_chrome_options():
     options = chrome_options()
-    options.add_argument('headless')  # use headless if you don't need a browser UI
+    options.add_argument('Google')  # use headless if you don't need a browser UI
     options.add_argument('--start-maximized')
     return options
 
@@ -22,7 +22,7 @@ def get_webdriver(get_chrome_options):
 def setup(request, get_webdriver):
     before_api_hook()
     driver = get_webdriver
-    url = 'https://test.autodoc.pro/en/signin'
+    url = 'https://test.autodoc.pro/fr/signin'
     if request.cls is not None:
         request.cls.driver = driver
     driver.get(url)  # run is from class or no
